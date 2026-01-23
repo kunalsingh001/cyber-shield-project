@@ -1,0 +1,272 @@
+/* ===============================
+   CONTACT PAGE ONLY
+================================ */
+
+/* HERO */
+.hero {
+  padding: 40px;
+  margin: 40px 80px;
+  border-radius: 20px;
+  background: var(--bg-panel);
+  border: 1px solid var(--glass-border);
+}
+
+.hero-grid {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+}
+
+.kicker {
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  color: var(--cyan-main);
+  margin-bottom: 12px;
+  font-family: "Orbitron", sans-serif;
+}
+
+.headline h1 {
+  font-size: 34px;
+  line-height: 1.2;
+  margin-bottom: 14px;
+}
+
+.tagline {
+  font-size: 15px;
+  line-height: 1.7;
+  max-width: 720px;
+  color: var(--text-muted);
+}
+
+/* Snapshot card */
+.hero-card {
+  min-width: 260px;
+  padding: 18px;
+  border-radius: 16px;
+  background: rgba(0, 217, 255, 0.06);
+  border: 1px solid var(--glass-border);
+}
+
+.hero-card h4 {
+  font-size: 14px;
+  margin-bottom: 6px;
+  color: var(--cyan-main);
+}
+
+.hero-card p {
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+/* ===============================
+   MAIN GRID
+================================ */
+
+.section {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 32px;
+  padding: 0px 80px 40px 80px;
+}
+
+.content-panel {
+  padding: 28px;
+  border-radius: 20px;
+  background: var(--bg-panel);
+  border: 1px solid var(--glass-border);
+}
+
+.content-panel h2 {
+  font-size: 22px;
+  margin-bottom: 6px;
+}
+
+.muted {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+}
+
+/* ===============================
+   FORM BOX
+================================ */
+
+.box {
+  background: rgba(0, 217, 255, 0.04);
+  border: 1px solid var(--glass-border);
+  border-radius: 18px;
+  padding: 22px;
+  margin-top: 16px;
+}
+
+/* FORM */
+.contact-form {
+  display: grid;
+  gap: 14px;
+}
+
+.row-two {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--glass-border);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text-main);
+  font-size: 14px;
+  outline: none;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--text-muted);
+}
+
+textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+/* FORM FOOTER */
+.form-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-top: 6px;
+}
+
+.submit-btn {
+  background: var(--cyan-main);
+  color: #ffffff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+}
+
+/* ===============================
+   CTA STRIP
+================================ */
+
+.cta-row {
+  margin-top: 18px;
+  padding: 18px;
+  border-radius: 16px;
+  background: rgba(0, 217, 255, 0.06);
+  border: 1px solid var(--glass-border);
+}
+
+.cta-row .small {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-top: 10px;
+}
+
+/* ===============================
+   ASIDE (RIGHT)
+================================ */
+
+.aside {
+  padding: 24px;
+  border-radius: 20px;
+  background: var(--bg-panel);
+  border: 1px solid var(--glass-border);
+}
+
+.aside h4 {
+  margin-bottom: 4px;
+}
+
+.info {
+  display: grid;
+  gap: 14px;
+  margin-top: 14px;
+}
+
+.info .item {
+  display: flex;
+  gap: 12px;
+  border-radius: 20px;
+  align-items: center;
+}
+
+.info .item span{
+  font-size: 25px;
+}
+
+.info strong {
+  color: var(--cyan-main);
+}
+
+.info p {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+/* ===============================
+   FADE ANIMATION
+================================ */
+
+.fade {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: all 0.6s ease;
+}
+
+.fade.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 900px) {
+  .hero,
+  .section {
+    margin: 20px;
+    padding: 24px;
+  }
+
+  .section {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-card {
+    display: none;
+  }
+
+  .row-two {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .headline h1 {
+    font-size: 22px;
+  }
+
+  .form-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .submit-btn {
+    width: 100%;
+  }
+}

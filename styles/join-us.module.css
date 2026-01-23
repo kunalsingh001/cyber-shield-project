@@ -1,0 +1,425 @@
+
+/* ===============================
+   SECTIONS
+================================ */
+
+.panel {
+  margin: 40px 80px;
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 56px 56px 60px;
+  border: 1px solid #e5eef6;
+  box-shadow:
+    0 25px 60px rgba(15, 23, 42, 0.04);
+}
+
+.heading {
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #0f172a;
+}
+
+.muted {
+  font-size: 15px;
+  color: #64748b;
+  margin-bottom: 28px;
+}
+
+/* ===============================
+   ROLE CARDS
+================================ */
+
+.rolesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 26px;
+}
+
+.roleCard {
+  padding: 28px 26px;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  background: linear-gradient(
+    to bottom,
+    #ffffff,
+    #f8fbff
+  );
+  transition: all 0.25s ease;
+}
+
+.roleCard h3 {
+  font-size: 18px;
+  margin-bottom: 8px;
+  color: #0f172a;
+}
+
+.roleCard p {
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: #475569;
+}
+
+.roleCard:hover {
+  transform: translateY(-4px);
+  border-color: #bae6fd;
+  box-shadow:
+    0 16px 40px rgba(2, 132, 199, 0.12);
+}
+
+/* ===============================
+   LISTS
+================================ */
+
+.list {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 24px;
+}
+
+.list li {
+  position: relative;
+  padding-left: 28px;
+  margin-bottom: 14px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #334155;
+}
+
+.list li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  color: #0284c7;
+  font-size: 14px;
+}
+
+.time {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #475569;
+  background: #f1f5f9;
+  padding: 12px 16px;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+/* ===============================
+   FORM
+================================ */
+
+.joinForm {
+  margin-top: 50px;
+  display: grid;
+  gap: 18px;
+}
+
+.joinForm input,
+.joinForm select,
+.joinForm textarea {
+  width: 100%;
+  padding: 14px 16px;
+  font-size: 14px;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  background: #ffffff;
+  color: #0f172a;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+.joinForm textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.joinForm input::placeholder,
+.joinForm textarea::placeholder {
+  color: #94a3b8;
+}
+
+.joinForm input:focus,
+.joinForm select:focus,
+.joinForm textarea:focus {
+  outline: none;
+  border-color: #38bdf8;
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.15);
+}
+
+/* ===============================
+   FORM CTA
+================================ */
+
+.formActions {
+  margin-top: 24px;
+  text-align: right;
+}
+
+.submitBtn {
+  padding: 14px 28px;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 14px;
+  background: linear-gradient(
+    to right,
+    #0284c7,
+    #0ea5e9
+  );
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.submitBtn:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 14px 30px rgba(14, 165, 233, 0.35);
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 900px) {
+  .panel {
+    padding: 36px 22px 40px;
+    margin: 20px;
+  }
+
+  .cta {
+    text-align: center;
+  }
+
+  .grid{
+    margin: 20px !important;
+  }
+}
+
+
+.section {
+  background: #f7f9fc;
+}
+
+.grid {
+  margin: 40px 80px;
+  display: grid;
+  gap: 32px;
+}
+
+/* ================= ROLE CARD ================= */
+
+.roleCard {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 36px 30px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  transition: all 0.35s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hover Glow */
+.roleCard::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    rgba(0, 217, 255, 0.12),
+    rgba(0, 217, 255, 0)
+  );
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.roleCard:hover::before {
+  opacity: 1;
+}
+
+.roleCard:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 30px 70px rgba(0, 217, 255, 0.18);
+  border-color: rgba(0, 217, 255, 0.35);
+}
+
+/* ================= CONTENT ================= */
+
+.heading {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: #0b1c2d;
+}
+
+.subtitle {
+  font-size: 14px;
+  font-weight: 600;
+  color: #00a6c7;
+  margin-bottom: 16px;
+  letter-spacing: 0.5px;
+}
+
+.intro {
+  font-size: 15px;
+  line-height: 1.65;
+  color: #4a5b6c;
+  margin-bottom: 18px;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 18px;
+}
+
+.list li {
+  font-size: 14px;
+  color: #334155;
+  margin-bottom: 10px;
+  padding-left: 18px;
+  position: relative;
+}
+
+.list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #00a6c7;
+  font-weight: 700;
+}
+
+.meta {
+  font-size: 14px;
+  color: #475569;
+  margin-bottom: 10px;
+}
+
+.time {
+  font-size: 13px;
+  font-weight: 600;
+  color: #0b7285;
+}
+
+/* ===============================
+   JOIN FORM
+================================ */
+
+.formPanel {
+  margin: 40px 80px;
+  background: #ffffff;
+  border-radius: 22px;
+  padding: 48px 40px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+}
+
+.formIntro {
+  font-size: 15px;
+  color: #475569;
+  margin-bottom: 34px;
+  line-height: 1.6;
+}
+
+/* FORM GRID */
+.joinForm {
+  display: grid;
+  gap: 22px;
+}
+
+/* FIELD */
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #0b1c2d;
+  letter-spacing: 0.3px;
+}
+
+/* INPUTS */
+.field input,
+.field select,
+.field textarea {
+  padding: 14px 16px;
+  font-size: 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  background: #f8fafc;
+  outline: none;
+  transition: all 0.25s ease;
+  font-family: inherit;
+}
+
+.field textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.field input::placeholder,
+.field textarea::placeholder {
+  color: #94a3b8;
+}
+
+/* FOCUS EFFECT */
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  border-color: #00a6c7;
+  background: #ffffff;
+  box-shadow: 0 0 0 4px rgba(0, 166, 199, 0.12);
+}
+
+/* ACTIONS */
+.formActions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+
+.submitBtn {
+  padding: 14px 28px;
+  border-radius: 10px;
+  border: none;
+  font-size: 14px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #00d9ff, #00a6c7);
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 10px 30px rgba(0, 217, 255, 0.35);
+}
+
+.submitBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 40px rgba(0, 217, 255, 0.45);
+}
+
+.submitBtn:active {
+  transform: translateY(0);
+}
+
+/* ===============================
+   MOBILE
+================================ */
+
+@media (max-width: 640px) {
+  .formPanel {
+    padding: 34px 22px;
+    margin: 20px !important;
+  }
+
+  .formActions {
+    justify-content: center;
+  }
+
+  .submitBtn {
+    width: 100%;
+    text-align: center;
+  }
+}

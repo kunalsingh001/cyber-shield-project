@@ -1,0 +1,76 @@
+.page {
+  padding: 80px 16px;
+  display: flex;
+  justify-content: center;
+  text-align: justify;
+}
+
+.article {
+  max-width: 820px;
+  width: 100%;
+}
+
+.badge {
+  display: inline-block;
+  background: rgba(0, 200, 255, 0.12);
+  color: #00c8ff;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 18px;
+}
+
+.title {
+  font-size: 36px;
+  line-height: 1.2;
+  margin-bottom: 12px;
+}
+
+.meta {
+  color: #9aa4af;
+  font-size: 14px;
+  margin-bottom: 24px;
+}
+
+.cover {
+  width: 100%;
+  border-radius: 16px;
+  margin: 32px 0;
+}
+
+.content {
+  font-size: 17px;
+  line-height: 1.75;
+  color: #e5e7eb;
+}
+
+.content h2 {
+  margin-top: 36px;
+  margin-bottom: 14px;
+  font-size: 24px;
+  color: rgb(86, 86, 86);
+}
+
+.content h3 {
+  margin-top: 36px;
+  margin-bottom: 14px;
+  font-size: 24px;
+  color: rgb(86, 86, 86);
+}
+
+.content p {
+  margin-bottom: 18px;
+
+  
+}
+
+.content ul {
+  padding-left: 20px;
+  margin-bottom: 20px;
+  color: rgb(86, 86, 86);
+}
+
+.content li {
+  margin-bottom: 10px;
+}

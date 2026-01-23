@@ -1,0 +1,139 @@
+/* ===============================
+   WEDO PAGE — EXTENSION ONLY
+   =============================== */
+
+/* HERO tweaks (inherits from About) */
+.hero {
+  margin: 40px 80px;
+}
+
+.hero-grid {
+  gap: 36px;
+}
+
+/* Core Programs */
+.offer-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.offer-card {
+  display: flex;
+  gap: 14px;
+  padding: 16px;
+  border-radius: 16px;
+  background: rgba(0, 217, 255, 0.04);
+  border: 1px solid var(--glass-border);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.offer-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 28px rgba(0, 217, 255, 0.12);
+}
+
+.offer-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  background: rgba(0, 217, 255, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  flex-shrink: 0;
+}
+
+.offer-card h3 {
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+
+.offer-card p {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* Program highlights */
+.programs {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 16px;
+}
+
+.box2 {
+  margin-top: 40px;
+}
+
+.box2 p {
+  margin-bottom: 20px;
+}
+
+.prog {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 15px;
+  align-items: center;
+  padding: 16px;
+  border-radius: 16px;
+  background: rgba(0, 217, 255, 0.04);
+  border: 1px solid var(--glass-border);
+}
+
+.prog .badge {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: rgba(0, 217, 255, 0.18);
+  color: var(--cyan-main);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* CTA row — consistent with About */
+.cta-row {
+  margin-top: 28px;
+  padding: 20px;
+  border-radius: 18px;
+  background: rgba(0, 217, 255, 0.06);
+  border: 1px solid var(--glass-border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.cta-row .small {
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.get-involved{
+  margin-top: 40px;
+}
+
+.donate-btn1{
+  border-radius: 10px;
+}
+
+
+/* ===============================
+   RESPONSIVE
+   =============================== */
+
+@media (max-width: 900px) {
+  .hero {
+    margin: 20px;
+    padding: 24px;
+  }
+
+  .offer-grid {
+    grid-template-columns: 1fr;
+  }
+}

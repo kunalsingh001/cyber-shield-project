@@ -1,0 +1,167 @@
+import { useEffect, useState } from "react";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
+
+// Firebase
+import { initializeApp } from "firebase/app";
+import {
+  getFirestore,
+  collection,
+  getDocs,
+  query,
+  orderBy,
+} from "firebase/firestore";
+
+/* ================= FIREBASE CONFIG ================= */
+
+const firebaseConfig = {
+  apiKey: "AIzaSyDRiTQzAtFNYFKYwUGnxvtMtmeUxrsCsBg",
+  authDomain: "cyber-shield-6cd3b.firebaseapp.com",
+  projectId: "cyber-shield-6cd3b",
+  storageBucket: "cyber-shield-6cd3b.firebasestorage.app",
+  messagingSenderId: "191686457942",
+  appId: "1:191686457942:web:3078cb04a88c66b67c99f7",
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+/* ================= HELPERS ================= */
+
+function getExcerpt(html = "", maxLength = 110) {
+  if (typeof window === "undefined") return "";
+  const tmp = document.createElement("div");
+  tmp.innerHTML = html;
+  const text = tmp.textContent || "";
+  return text.length > maxLength
+    ? text.substring(0, maxLength).trim() + "…"
+    : text;
+}
+
+/* ================= PAGE ================= */
+
+export default function ResourcesEvents() {
+  const [blogs, setBlogs] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [activeTab, setActiveTab] = useState("resource"); // resource | event
+
+  useEffect(() => {
+    // fade animation
+    document.querySelectorAll(".fade").forEach((el, i) => {
+      setTimeout(() => el.classList.add("show"), 120 + i * 80);
+    });
+
+    loadBlogs();
+  }, []);
+
+  const loadBlogs = async () => {
+    try {
+      const q = query(collection(db, "blogs"), orderBy("createdAt", "desc"));
+      const snapshot = await getDocs(q);
+
+      const data = snapshot.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+      }));
+
+      setBlogs(data);
+    } catch (err) {
+      console.error("Failed to load blogs:", err);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const filteredBlogs = blogs.filter((b) => b.category === activeTab);
+
+  return (
+    <>
+      <Navbar />
+
+      <main className="page">
+        {/* HERO */}
+        <section className="heros fade">
+          <div className="hero-grid">
+            <div className="headline">
+              <div className="kicker">Resources & Events</div>
+
+              <h1>Knowledge, updates & cyber safety initiatives</h1>
+
+              <p className="tagline">
+                Articles, resources, and event updates created by Project
+                CyberShield for students, educators, and communities.
+              </p>
+
+              {/* TABS */}
+              <div className="tab-row">
+                <button
+                  className={activeTab === "resource" ? "tab active" : "tab"}
+                  onClick={() => setActiveTab("resource")}
+                >
+                  Resources
+                </button>
+
+                <button
+                  className={activeTab === "event" ? "tab active" : "tab"}
+                  onClick={() => setActiveTab("event")}
+                >
+                  Events
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* CONTENT */}
+        <section className="section">
+          <div className="content-panel fade">
+            {loading && <p className="muted">Loading content…</p>}
+
+            {!loading && filteredBlogs.length === 0 && (
+              <p className="muted">No items available in this section.</p>
+            )}
+
+            <div className="blogs-grid">
+              {filteredBlogs.map((blog) => (
+                <article
+                  key={blog.id}
+                  className="blog-card"
+                  onClick={() => (window.location.href = `/blog?id=${blog.id}`)}
+                >
+                  {blog.coverImage && (
+                    <img
+                      src={blog.coverImage}
+                      alt={blog.title}
+                      className="blog-cover"
+                    />
+                  )}
+
+                  <span className="pill">
+                    {activeTab === "resource"
+                      ? "CyberShield Resource"
+                      : "CyberShield Event"}
+                  </span>
+
+                  <div className="blog-title-row">
+                    <h3>{blog.title || "Untitled"}</h3>
+                    <span className="arrow">↗</span>
+                  </div>
+
+                  <p className="blog-meta">
+                    {blog.createdAtLocal ||
+                      (blog.createdAt?.toDate &&
+                        blog.createdAt.toDate().toLocaleDateString())}
+                  </p>
+
+                  <p className="blog-excerpt">{getExcerpt(blog.content)}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <Footer />
+    </>
+  );
+}

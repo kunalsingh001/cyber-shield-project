@@ -1,0 +1,231 @@
+/* ===============================
+   ABOUT PAGE ONLY
+   =============================== */
+
+.heros {
+  position: relative;
+  padding: 40px;
+  margin: 40px 80px;
+  border-radius: 20px;
+  background: var(--bg-panel);
+  border: 1px solid var(--glass-border);
+}
+
+.hero-grid {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+}
+
+.kicker {
+  display: inline-block;
+  font-family: "Orbitron", sans-serif;
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  color: var(--cyan-main);
+  margin-bottom: 12px;
+}
+
+.headline h1 {
+  font-size: 36px;
+  line-height: 1.2;
+  margin-bottom: 14px;
+}
+
+.tagline {
+  font-size: 15px;
+  max-width: 720px;
+  line-height: 1.7;
+}
+
+.keyword-row {
+  display: flex;
+  gap: 12px;
+  margin-top: 18px;
+  flex-wrap: wrap;
+}
+
+.kw {
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 13px;
+  border: 1px solid var(--glass-border);
+  color: var(--cyan-main);
+  background: rgba(0, 217, 255, 0.06);
+}
+
+.underline {
+  display: block;
+  width: 90px;
+  height: 4px;
+  background: var(--cyan-main);
+  margin-top: 14px;
+  border-radius: 999px;
+}
+
+/* Snapshot card */
+.hero-card {
+  min-width: 240px;
+  padding: 18px;
+  border-radius: 16px;
+  background: rgba(0, 217, 255, 0.06);
+  border: 1px solid var(--glass-border);
+}
+
+.hero-card h4 {
+  font-size: 14px;
+  margin-bottom: 6px;
+  color: var(--cyan-main);
+}
+
+.hero-card p {
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* ===============================
+   MAIN SECTION GRID
+   =============================== */
+
+.section {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 32px;
+  padding: 0px 80px 40px 80px;
+}
+
+.content-panel {
+  padding: 28px;
+  border-radius: 20px;
+  background: var(--bg-panel);
+  border: 1px solid var(--glass-border);
+}
+
+.content-panel h2 {
+  font-size: 22px;
+  margin-bottom: 6px;
+}
+
+.muted {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+}
+
+/* What we do cards */
+.what-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-top: 14px;
+}
+
+.what-card {
+  display: flex;
+  gap: 12px;
+  padding: 16px;
+  border-radius: 14px;
+  background: rgba(0, 217, 255, 0.04);
+  border: 1px solid var(--glass-border);
+}
+
+.what-card .icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 217, 255, 0.12);
+  font-size: 18px;
+}
+
+/* Team */
+.team-grid {
+  display: flex;
+  gap: 16px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+
+.member {
+  flex: 1 1 220px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 16px;
+  border-radius: 16px;
+  background: rgba(0, 217, 255, 0.04);
+  border: 1px solid var(--glass-border);
+}
+
+.avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Right side stats */
+.aside {
+  padding: 22px;
+  border-radius: 20px;
+  background: var(--bg-panel);
+  border: 1px solid var(--glass-border);
+}
+
+.stat {
+  text-align: center;
+  padding: 16px;
+  margin-bottom: 14px;
+  border-radius: 14px;
+  background: rgba(0, 217, 255, 0.04);
+}
+
+.stat h3 {
+  font-size: 22px;
+  color: var(--cyan-main);
+}
+
+/* ===============================
+   FADE ANIMATION (used by JS)
+   =============================== */
+
+.fade {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: all 0.6s ease;
+}
+
+.fade.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===============================
+   RESPONSIVE
+   =============================== */
+
+@media (max-width: 900px) {
+  .hero,
+  .section {
+    margin: 20px;
+    padding: 24px;
+  }
+
+  .section {
+    grid-template-columns: 1fr;
+    margin: 0px !important;
+  }
+
+  .what-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-card {
+    display: none;
+  }
+
+
+}
